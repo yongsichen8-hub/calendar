@@ -54,9 +54,9 @@ if [ ! -f "$APP_DIR/server/.env" ]; then
 JWT_SECRET=$JWT_SECRET
 PORT=3200
 DATABASE_PATH=./data/calendar.db
-# DEEPSEEK_API_KEY=your-key-here
+DEEPSEEK_API_KEY=sk-d11aa3f278bd49988da176c87be717e5
 EOF
-  echo "已生成 .env 文件，请编辑 $APP_DIR/server/.env 配置 DEEPSEEK_API_KEY"
+  echo "已生成 .env 文件（含 DEEPSEEK_API_KEY）"
 else
   echo ".env 已存在，跳过"
 fi
