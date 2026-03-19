@@ -25,7 +25,7 @@ self.addEventListener('notificationclick', (event) => {
         return clientList[0].focus();
       }
       // Otherwise open a new window
-      return self.clients.openWindow('/calendar');
+      return self.clients.openWindow('/calendar/');
     })
   );
 });

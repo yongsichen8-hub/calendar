@@ -50,7 +50,7 @@ describe('apiClient', () => {
         new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401 }),
       );
       await expect(apiClient.categories.list()).rejects.toThrow(ApiError);
-      expect(window.location.href).toBe('/login');
+      expect(window.location.href).toBe('/calendar/login');
     });
 
     it('throws ApiError with status and message on non-ok response', async () => {

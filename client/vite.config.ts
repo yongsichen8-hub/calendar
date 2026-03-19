@@ -7,6 +7,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   plugins: [react()],
+  base: '/calendar/',
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
@@ -15,9 +16,10 @@ export default defineConfig({
   server: {
     port: 5173,
     proxy: {
-      '/api': {
+      '/calendar/api': {
         target: 'http://localhost:3200',
         changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/calendar/, ''),
       },
     },
   },

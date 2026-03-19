@@ -83,8 +83,8 @@ function showFallbackNotification(title: string, body: string, tag: string): voi
     const notification = new Notification(title, { body, tag, requireInteraction: true });
     notification.onclick = () => {
       window.focus();
-      if (!window.location.pathname.includes('/calendar')) {
-        window.location.href = '/calendar';
+      if (!window.location.pathname.includes('/calendar/calendar')) {
+        window.location.href = '/calendar/calendar';
       }
       notification.close();
     };

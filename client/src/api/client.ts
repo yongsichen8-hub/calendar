@@ -50,8 +50,10 @@ class ApiError extends Error {
   }
 }
 
+const BASE_PATH = '/calendar';
+
 async function request<T>(url: string, options: RequestInit = {}): Promise<T> {
-  const res = await fetch(url, {
+  const res = await fetch(`${BASE_PATH}${url}`, {
     ...options,
     credentials: 'include',
     headers: {
@@ -61,7 +63,7 @@ async function request<T>(url: string, options: RequestInit = {}): Promise<T> {
   });
 
   if (res.status === 401) {
-    window.location.href = '/login';
+    window.location.href = `${BASE_PATH}/login`;
     throw new ApiError('Unauthorized', 401);
   }
 
