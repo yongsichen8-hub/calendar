@@ -18,7 +18,7 @@ git commit -m "初始提交"
 然后去 GitHub 创建新仓库（不要勾选 README），按提示推送：
 
 ```bash
-git remote add origin https://github.com/你的用户名/calendar-app.git
+git remote add origin https://github.com/yongsichen8-hub/calendar.git
 git branch -M main
 git push -u origin main
 ```
@@ -29,9 +29,9 @@ SSH 登录服务器后执行：
 
 ```bash
 # 下载部署脚本（或手动上传）
-curl -O https://raw.githubusercontent.com/你的用户名/calendar-app/main/deploy.sh
+curl -O https://raw.githubusercontent.com/yongsichen8-hub/calendar/main/deploy.sh
 chmod +x deploy.sh
-./deploy.sh https://github.com/你的用户名/calendar-app.git
+./deploy.sh https://github.com/yongsichen8-hub/calendar.git
 ```
 
 ## 步骤三：配置环境变量
