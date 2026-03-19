@@ -194,7 +194,7 @@ function InspirationItem({ entry, categoryName, onToggleComplete, onToggleUsed, 
         {typeIcon}
       </span>
       <div style={{ flex: 1, minWidth: 0 }}>
-        <span className={`inspiration-item__content${entry.completed ? ' line-through opacity-50' : ''}`}>
+        <span className={`inspiration-item__content${entry.completed ? ' line-through opacity-50' : ''}`} style={{ whiteSpace: 'pre-wrap' }}>
           {entry.content}
         </span>
         {entry.imageData && (

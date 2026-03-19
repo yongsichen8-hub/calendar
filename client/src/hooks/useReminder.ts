@@ -49,7 +49,8 @@ let swRegistration: ServiceWorkerRegistration | null = null;
 async function registerServiceWorker(): Promise<void> {
   if (!('serviceWorker' in navigator)) return;
   try {
-    swRegistration = await navigator.serviceWorker.register('/sw.js');
+    const basePath = import.meta.env.BASE_URL || '/';
+    swRegistration = await navigator.serviceWorker.register(`${basePath}sw.js`);
     await navigator.serviceWorker.ready;
   } catch {
     // SW registration may fail in dev or insecure contexts
